@@ -1,4 +1,4 @@
-package org.example.day6.array3;
+package org.example.day6.class1;
 
 import org.jsoup.Jsoup;
 
