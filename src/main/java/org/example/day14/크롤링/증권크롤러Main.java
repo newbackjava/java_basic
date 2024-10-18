@@ -8,7 +8,8 @@ public class 증권크롤러Main {
         //005930, 035720
         증권크롤러1 naver = new 증권크롤러1();
         try {
-            naver.crawl(code);
+            String data = naver.crawl(code);
+            JOptionPane.showMessageDialog(null, data);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
