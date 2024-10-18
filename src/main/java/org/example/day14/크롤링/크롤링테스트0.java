@@ -1,34 +1,29 @@
 package org.example.day14.크롤링;
 
-import org.jsoup.Connection;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class 크롤링테스트0 {
-    public static void main(String[] args) throws Exception {
-        //String s = JOptionPane.showInputDialog("날씨 입력");//return이 String
-        Connection con = Jsoup.connect("https://www.naver.com/"); //return이 Connection
-        //Connection : 연결통로를 나타내는 스트림 객체
-        Document doc = con.get(); //return Document
-        //Document(소스코드)
-        //Document doc2 =  Jsoup.connect("https://www.naver.com/").get();
-        //체인식 코드
-        //System.out.println(doc); //코드를 String으로 만들어줌.
-        System.out.println("설치 성공~~~~~~!!!");
 
-        Elements list = doc.select("span.blind"); //여러개
-        //Elements는 ArrayList를 상속받아서 만든 것. 
-        System.out.println(list.size()); //개수 --> 3개
-        System.out.println(list); //
-        Element e1 = list.get(0); //<span class="blind">검색</span>
-        String e1Text = e1.text();
-        System.out.println(e1Text);
+            public static void main(String[] args) {
+                String imageUrl = "https://hnhwangtogol.com/_upload/mall/20191010171935_16421.jpg";
+                String destinationFile = "downloaded_image.jpg";
 
-        Element e2 = list.get(1);
-        String e2Text = e2.text();
-        System.out.println(e2Text);
-    }
+                try {
+                    downloadImage(imageUrl, destinationFile);
+                    System.out.println("이미지 다운로드 완료: " + destinationFile);
+                } catch (IOException e) {
+                    System.out.println("이미지 다운로드 실패: " + e.getMessage());
+                }
+            }
 
-}
+            public static void downloadImage(String imageUrl, String destinationFile) throws IOException {
+                try (InputStream in = new URL(imageUrl).openStream()) {
+                    Files.copy(in, Paths.get(destinationFile));
+                }
+            }
+        }
+
