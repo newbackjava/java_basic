@@ -48,17 +48,22 @@ public class 반복문사용 {
                 .forEach(n -> System.out.print("최종: " + n + " "));       // 최종 수집
         System.out.println();
         System.out.println("=========================>");
-        List<Integer> numbers2 = Arrays.asList(3, 1, 6, 2, 5, 4);
+
+
+        List<Integer> numbers2 = Arrays.asList(3, 1, 6, 2, 5, 4, 8, 9);
 
         numbers2.stream()
                 .filter(n -> n % 2 == 0)                 // 짝수 필터링
-                .peek(n -> System.out.print("필터 후: " + n + ", "))
+                .peek(n -> System.out.println("필터 후: " + n))
+                .map(n -> n - 1)
+                .peek(n -> System.out.println("맵 후: " + n))
                 .sorted()  // 소트전까지는 filter를 하고, 다 sort한 후
                 //sort한 결과의 스트림의 요소를 하나씩 꺼내서 map한 후 foreach로 요소 하나씩 출력!
-                .peek(n -> System.out.print("소트 후: " + n + ", "))
+                .peek(n -> System.out.print("소트 후 하나씩: " + n + ", "))
                 .map(n -> n * 10)
                 .peek(n -> System.out.print("맵 후: " + n + ", "))// 요소를 10배로 변경
-                .forEach(n -> System.out.print("최종: " + n + " "));
+                .limit(2)
+                .forEach(n -> System.out.print("최종: " + n + "------\n"));
         //필터링하기 전까지는 filter하고 map하고
         //중간에 sort한번 해주고
         //sort한 이후에는 sort한 결과의 요소를 하나씩 다시 map하고 foreach해주고
