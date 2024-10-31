@@ -12,7 +12,7 @@ class Counter {
     }
 }
 
-public class 조인메인 {
+public class 조인메서드 {
     public static void main(String[] args) throws InterruptedException {
         Counter counter = new Counter();
 
