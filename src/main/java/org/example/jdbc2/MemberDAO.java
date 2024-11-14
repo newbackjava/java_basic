@@ -5,8 +5,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
 public class MemberDAO {
+    Connection con;//전역변수가 됨, null로 초기화!
 
-    public MemberDAO() {
+    public MemberDAO() throws Exception {
         //new MemberDAO()할 때 클래스이름과 동일한 메서드인 생성자메서드가
         //                     자동호출됨.(1-2단계를 실행해줌)
         //1. 드라이버 설정 --> 레이지로딩(실행시에 메모리에 올려줌)
@@ -16,7 +17,7 @@ public class MemberDAO {
         String url = "jdbc:mysql://localhost:3306/shop2";
         String id = "root";
         String pw = "1234";
-        Connection con = DriverManager.getConnection(url, id, pw);
+        con = DriverManager.getConnection(url, id, pw);
         System.out.println("2. db연결 성공!");
     }
 
