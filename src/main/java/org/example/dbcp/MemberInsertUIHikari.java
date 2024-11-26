@@ -23,7 +23,7 @@ public class MemberInsertUIHikari {
 
         // MemberVO 객체 생성 후 입력값 세팅
         MemberVO vo = new MemberVO();
-        vo.setId(id값);
+        //vo.setId(id값);
         vo.setPw(pw값);
         vo.setName(name값);
         vo.setTel(tel값);

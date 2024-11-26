@@ -28,14 +28,14 @@ import java.sql.*;
 import java.util.Properties;
 import java.util.Vector;
 public class DBConnectionMgr {
-    private Vector connections = new Vector(100); //Connection 10
+    private Vector connections = new Vector(1000); //Connection 10
     private String _driver = "com.mysql.cj.jdbc.Driver",
     _url = "jdbc:mysql://localhost:3306/shop2?useUnicode=true&serverTimezone=Asia/Seoul",
     _user = "root",
     _password = "1234";
     private boolean _traceOn = false;
     private boolean initialized = false;
-    private int _openConnections = 10;
+    private int _openConnections = 1000;
     private static DBConnectionMgr instance = null;
 
     public DBConnectionMgr() {
