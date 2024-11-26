@@ -1,8 +1,8 @@
-package org.example.jdbc2;
+package org.example.dbcp;
 
 import java.util.Scanner;
 
-public class MemberInsertUI2 {
+public class MemberInsertUI1 {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         System.out.print("id입력>> ");
@@ -15,17 +15,13 @@ public class MemberInsertUI2 {
         String tel값 = sc.next(); //1111
         sc.close();
 
-        //Member테이블에 연결해서 입력받은 데이터를 주고 insert해달라고 부르자.(호출하자.)
-        //MemberDAO클래스 사용해서 insert()호출!
-       // MemberDAO2 dao = new MemberDAO2();
-        //가방만들기(new) -> 넣기(set) -> 전달
         MemberVO vo = new MemberVO();
         //vo.setId(id값);
         vo.setPw(pw값);
         vo.setName(name값);
         vo.setTel(tel값);
-        for (int i = 0; i <100; i++) {
-            MemberDAO2 dao = new MemberDAO2();
+        for (int i = 0; i <1000; i++) {
+            MemberDAO1 dao = new MemberDAO1();
             vo.setId(id값+i);
             dao.insert(vo);
         }

@@ -12,6 +12,9 @@ repositories {
 dependencies {
     // https://mvnrepository.com/artifact/org.jsoup/jsoup
     implementation 'org.jsoup:jsoup:1.18.1'
+
+    implementation 'com.zaxxer:HikariCP:5.0.1'
+
     implementation 'mysql:mysql-connector-java:8.0.33'
     // 버전은 사용 중인 MySQL 서버와 호환되는 최신 버전으로 설정합니다.
     implementation 'org.mongodb:mongo-java-driver:3.2.2' //몽고db용
