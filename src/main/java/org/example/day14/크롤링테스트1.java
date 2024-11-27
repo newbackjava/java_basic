@@ -1,4 +1,4 @@
-package org.example.day14.크롤링;
+package org.example.day14;
 
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
