@@ -14,6 +14,17 @@ console.log("server 3000 start");
 
 ```
 
+- index.html
+  
+```
+
+<h1>i am out file</h1>
+<img src=https://gongu.copyright.or.kr/static/gongu/img/sub/pixabay.jpg>
+
+```
+
+- server2.js
+
 ```
 const http = require("http");
 const fs = require("fs");
